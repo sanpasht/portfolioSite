@@ -1,12 +1,12 @@
-# San's Portfolio 🌐
+# San's Portfolio 
 
 A personal portfolio website showcasing my projects, skills, and experience as a developer.
 
-🔗 **Live Site:** [san-portfolio-psi.vercel.app](https://san-portfolio-psi.vercel.app)
+ **Live Site:** [san-portfolio-psi.vercel.app](https://san-portfolio-psi.vercel.app)
 
 ---
 
-## ✨ Features
+## Features
 
 - Responsive design for all screen sizes
 - Project showcase with descriptions and links
@@ -16,7 +16,7 @@ A personal portfolio website showcasing my projects, skills, and experience as a
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - **React** – Frontend library
 - **CSS / Tailwind CSS** – Styling *(update as needed)*
@@ -24,7 +24,7 @@ A personal portfolio website showcasing my projects, skills, and experience as a
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 To run this project locally:
 
@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -56,5 +56,3 @@ src/
 └── index.js          # Entry point
 ```
 
-
-This project is open source and available under the [MIT License](LICENSE).
