@@ -1,4 +1,4 @@
-import { ComposeIcon } from "@sanity/icons";
+import { ComposeIcon } from "@sanity/icons/Compose";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const post = defineType({

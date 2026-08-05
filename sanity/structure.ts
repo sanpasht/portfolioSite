@@ -1,14 +1,12 @@
-import {
-  ClockIcon,
-  CogIcon,
-  ComposeIcon,
-  CaseIcon,
-  DocumentsIcon,
-  EnvelopeIcon,
-  HomeIcon,
-  StarIcon,
-  UserIcon,
-} from "@sanity/icons";
+import { CaseIcon } from "@sanity/icons/Case";
+import { ClockIcon } from "@sanity/icons/Clock";
+import { CogIcon } from "@sanity/icons/Cog";
+import { ComposeIcon } from "@sanity/icons/Compose";
+import { DocumentsIcon } from "@sanity/icons/Documents";
+import { EnvelopeIcon } from "@sanity/icons/Envelope";
+import { HomeIcon } from "@sanity/icons/Home";
+import { StarIcon } from "@sanity/icons/Star";
+import { UserIcon } from "@sanity/icons/User";
 import type { StructureResolver } from "sanity/structure";
 
 /**

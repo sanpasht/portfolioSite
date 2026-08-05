@@ -1,4 +1,4 @@
-import { ClockIcon } from "@sanity/icons";
+import { ClockIcon } from "@sanity/icons/Clock";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 /** Every list on /now is the same shape, so the editor learns it once. */

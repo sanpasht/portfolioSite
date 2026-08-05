@@ -136,6 +136,7 @@ export async function getProject(slug: string): Promise<Project | null> {
 export async function getProjectSlugs(): Promise<string[]> {
   return sanityFetch<string[]>({
     query: projectSlugsQuery,
+    allowDrafts: false,
     tags: ["project"],
     fallback: isSanityConfigured
       ? []
@@ -173,6 +174,7 @@ export async function getPost(slug: string): Promise<Post | null> {
 export async function getPostSlugs(): Promise<string[]> {
   return sanityFetch<string[]>({
     query: postSlugsQuery,
+    allowDrafts: false,
     tags: ["post"],
     fallback: isSanityConfigured ? [] : fallbackPosts.map((post) => post.slug),
   });
@@ -186,6 +188,7 @@ type SitemapEntries = {
 export async function getSitemapEntries(): Promise<SitemapEntries> {
   return sanityFetch<SitemapEntries>({
     query: sitemapQuery,
+    allowDrafts: false,
     tags: ["post", "project"],
     fallback: isSanityConfigured
       ? { posts: [], projects: [] }

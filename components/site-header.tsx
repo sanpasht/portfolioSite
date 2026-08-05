@@ -23,10 +23,9 @@ function isActive(pathname: string, href: string) {
 
 export function SiteHeader({ name }: { name: string }) {
   const pathname = usePathname();
+  // Each link below is wrapped in SheetClose, so navigating closes the menu
+  // without needing to watch the pathname.
   const [open, setOpen] = React.useState(false);
-
-  // Close the mobile menu whenever navigation lands somewhere new.
-  React.useEffect(() => setOpen(false), [pathname]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">

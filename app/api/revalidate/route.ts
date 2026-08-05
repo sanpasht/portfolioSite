@@ -28,8 +28,12 @@ export async function POST(request: NextRequest) {
 
     // Coarse on purpose: this site is small, and a full refresh is cheaper to
     // reason about than per-document tag bookkeeping.
-    revalidateTag("sanity");
-    revalidateTag(body._type);
+    //
+    // Next 16 wants a cacheLife profile as the second argument. "max" purges
+    // every entry carrying the tag regardless of its own profile, which is what
+    // a publish webhook means by "this content changed".
+    revalidateTag("sanity", "max");
+    revalidateTag(body._type, "max");
 
     return NextResponse.json({ revalidated: true, type: body._type });
   } catch (error) {

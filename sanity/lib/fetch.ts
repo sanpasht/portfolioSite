@@ -12,6 +12,12 @@ type FetchOptions = {
   tags?: string[];
   /** Value returned when Sanity isn't configured or the query fails. */
   fallback: unknown;
+  /**
+   * Set false for queries that run outside a request, such as
+   * `generateStaticParams` and the sitemap. Next 16 throws if `draftMode()` is
+   * called there, and those callers only ever want published content anyway.
+   */
+  allowDrafts?: boolean;
 };
 
 /**
@@ -29,10 +35,11 @@ export async function sanityFetch<T>({
   params = {},
   tags = [],
   fallback,
+  allowDrafts = true,
 }: FetchOptions & { fallback: T }): Promise<T> {
   if (!client) return fallback;
 
-  const { isEnabled: isDraft } = await draftMode();
+  const isDraft = allowDrafts ? (await draftMode()).isEnabled : false;
 
   if (isDraft && !readToken) {
     console.warn(
