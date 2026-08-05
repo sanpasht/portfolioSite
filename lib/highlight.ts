@@ -3,7 +3,7 @@ import "server-only";
 import { createHighlighter, type Highlighter } from "shiki";
 
 /**
- * Highlighting runs on the server only — the browser never downloads a
+ * Highlighting runs on the server only. The browser never downloads a
  * highlighter. Dual themes are emitted as CSS variables so switching the site
  * theme doesn't require re-highlighting.
  */

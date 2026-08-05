@@ -75,7 +75,7 @@ export const post = defineType({
       type: "datetime",
       group: "meta",
       description:
-        "Set a future date to schedule the post — it stays hidden until then.",
+        "Set a future date to schedule the post. It stays hidden until then.",
       initialValue: () => new Date().toISOString(),
       validation: (Rule) => Rule.required(),
     }),

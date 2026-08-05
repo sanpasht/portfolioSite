@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** "March 4, 2026" — stable across server/client by pinning the timezone. */
+/** "March 4, 2026". Timezone is pinned so server and client agree. */
 export function formatDate(value?: string | null) {
   if (!value) return "";
   const date = new Date(value);
@@ -18,7 +18,7 @@ export function formatDate(value?: string | null) {
   }).format(date);
 }
 
-/** "Mar 2026" — for compact listings and timelines. */
+/** "Mar 2026", for compact listings and timelines. */
 export function formatShortDate(value?: string | null) {
   if (!value) return "";
   const date = new Date(value);

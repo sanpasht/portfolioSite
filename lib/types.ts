@@ -40,7 +40,6 @@ export type SiteSettings = {
   description: string;
   email: string;
   location?: string | null;
-  resumeUrl?: string | null;
   socialLinks?: SocialLink[] | null;
   ogImage?: SanityImage | null;
 };

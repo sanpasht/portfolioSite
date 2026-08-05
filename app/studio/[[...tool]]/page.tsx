@@ -45,7 +45,7 @@ function StudioSetupNotice() {
         {`npx sanity@latest init --env .env.local`}
       </pre>
       <p className="mt-4 text-sm text-muted-foreground">
-        Current project id: <code className="font-mono">{projectId || "—"}</code>
+        Current project id: <code className="font-mono">{projectId || "not set"}</code>
       </p>
     </main>
   );

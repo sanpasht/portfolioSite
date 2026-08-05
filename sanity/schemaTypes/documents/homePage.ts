@@ -17,13 +17,14 @@ export const homePage = defineType({
       name: "heroSubtitle",
       title: "Hero subtitle",
       type: "string",
-      description: 'e.g. "MCS @ UC Irvine · BS Mathematics"',
+      description:
+        "Optional second line above the role. Leave empty to show the role alone.",
     }),
     defineField({
       name: "heroRole",
       title: "Hero role",
       type: "string",
-      description: 'e.g. "Software Engineer"',
+      description: 'e.g. "Systems and Embedded Engineer"',
     }),
     defineField({
       name: "intro",
@@ -34,13 +35,13 @@ export const homePage = defineType({
 
     defineField({
       name: "currentFocusTitle",
-      title: "Current Focus — heading",
+      title: "Current Focus heading",
       type: "string",
       initialValue: "Current Focus",
     }),
     defineField({
       name: "currentFocus",
-      title: "Current Focus — items",
+      title: "Current Focus items",
       type: "array",
       description: "Drag to reorder. Leave empty to hide the section.",
       of: [defineArrayMember({ type: "entry" })],

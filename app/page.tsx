@@ -24,14 +24,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     ...buildMetadata({
       seo: home.seo,
-      title: `${settings.name} — ${settings.role}`,
+      title: `${settings.name} · ${settings.role}`,
       description: settings.description,
       path: "/",
       siteName: settings.name,
       ogSubtitle: settings.tagline ?? settings.role,
     }),
     // The root layout's template would otherwise append the name twice.
-    title: { absolute: home.seo?.title || `${settings.name} — ${settings.role}` },
+    title: { absolute: home.seo?.title || `${settings.name} · ${settings.role}` },
   };
 }
 

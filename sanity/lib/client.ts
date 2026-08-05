@@ -3,7 +3,7 @@ import { createClient, type SanityClient } from "next-sanity";
 import { apiVersion, dataset, isSanityConfigured, projectId } from "../env";
 
 /**
- * `null` when no project id is configured — callers fall back to seed content
+ * `null` when no project id is configured, so callers fall back to seed content
  * rather than crashing on a half-configured environment.
  */
 export const client: SanityClient | null = isSanityConfigured

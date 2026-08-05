@@ -94,7 +94,6 @@ export const socialLink = defineType({
           { title: "GitHub", value: "github" },
           { title: "LinkedIn", value: "linkedin" },
           { title: "Email", value: "mail" },
-          { title: "Document", value: "file" },
           { title: "X / Twitter", value: "twitter" },
           { title: "Generic link", value: "link" },
         ],

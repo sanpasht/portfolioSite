@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   ArrowUpRight,
-  FileText,
   Github,
   Link as LinkIcon,
   Linkedin,
@@ -37,7 +36,6 @@ const icons = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
-  file: FileText,
   twitter: Twitter,
   link: LinkIcon,
 } as const;

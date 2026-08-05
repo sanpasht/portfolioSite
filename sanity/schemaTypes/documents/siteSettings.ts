@@ -18,14 +18,14 @@ export const siteSettings = defineType({
       name: "role",
       title: "Role",
       type: "string",
-      description: 'e.g. "Software Engineer"',
+      description: 'e.g. "Systems and Embedded Engineer"',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "tagline",
       title: "Tagline",
       type: "string",
-      description: 'e.g. "MCS @ UC Irvine · BS Mathematics"',
+      description: "Optional. An extra line shown under your name.",
     }),
     defineField({
       name: "description",
@@ -47,21 +47,6 @@ export const siteSettings = defineType({
       name: "location",
       title: "Location",
       type: "string",
-    }),
-    defineField({
-      name: "resumeUrl",
-      title: "Resume link",
-      type: "string",
-      description:
-        "Where /resume sends people. Either an uploaded file below, or a full URL.",
-    }),
-    defineField({
-      name: "resumeFile",
-      title: "Resume file",
-      type: "file",
-      description:
-        "Drag a PDF here. Takes precedence over the link above when set.",
-      options: { accept: ".pdf" },
     }),
     defineField({
       name: "socialLinks",

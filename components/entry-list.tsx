@@ -57,7 +57,7 @@ export function ReadingList({ items }: { items?: ReadingItem[] | null }) {
               )}
             </span>
             {item.author ? (
-              <span className="text-muted-foreground"> — {item.author}</span>
+              <span className="text-muted-foreground"> by {item.author}</span>
             ) : null}
           </p>
           {item.note ? (

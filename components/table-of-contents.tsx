@@ -2,7 +2,7 @@ import type { Heading } from "@/lib/portable-text-utils";
 import { cn } from "@/lib/utils";
 
 /**
- * Collapsed by default on phones, open on desktop — a long list of anchors
+ * Collapsed by default on phones, open on desktop. A long list of anchors
  * shouldn't stand between the reader and the first paragraph.
  */
 export function TableOfContents({ headings }: { headings: Heading[] }) {

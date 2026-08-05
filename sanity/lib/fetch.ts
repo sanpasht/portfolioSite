@@ -36,7 +36,7 @@ export async function sanityFetch<T>({
 
   if (isDraft && !readToken) {
     console.warn(
-      "[sanity] Draft mode is on but SANITY_API_READ_TOKEN is unset — serving published content.",
+      "[sanity] Draft mode is on but SANITY_API_READ_TOKEN is unset. Serving published content.",
     );
   }
 

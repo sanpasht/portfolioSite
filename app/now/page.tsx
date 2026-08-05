@@ -28,7 +28,7 @@ export default async function NowPage() {
   const now = await getNowPage();
 
   // `filled` is checked here rather than inside the children so an empty
-  // section drops out of the page entirely — heading included.
+  // section drops out of the page entirely, heading included.
   const filled = (list?: unknown[] | null) => Array.isArray(list) && list.length > 0;
 
   const sections: { title: string; show: boolean; content: React.ReactNode }[] = [

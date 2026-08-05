@@ -1,5 +1,5 @@
 /**
- * The Studio owns its whole viewport — no site chrome, no site typography.
+ * The Studio owns its whole viewport. No site chrome, no site typography.
  */
 export default function StudioLayout({
   children,

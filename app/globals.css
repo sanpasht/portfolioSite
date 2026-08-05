@@ -6,7 +6,7 @@
    Design tokens.
 
    One accent, one neutral ramp, one radius scale. Everything on the site pulls
-   from these — if a colour or radius is hardcoded in a component, it's a bug.
+   from these. If a colour or radius is hardcoded in a component, it's a bug.
 --------------------------------------------------------------------------- */
 
 :root {

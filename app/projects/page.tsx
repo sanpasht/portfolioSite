@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
   return buildMetadata({
     title: "Projects",
-    description: `Things ${settings.name} has designed and built — systems work, embedded projects, and tools.`,
+    description: `Things ${settings.name} has designed and built: systems work, embedded projects, and tools.`,
     path: "/projects",
     siteName: settings.name,
   });

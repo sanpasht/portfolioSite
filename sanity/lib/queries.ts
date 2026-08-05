@@ -1,7 +1,7 @@
 import { defineQuery } from "next-sanity";
 
 /**
- * `$preview` is injected by `sanityFetch` — true only inside draft mode. It
+ * `$preview` is injected by `sanityFetch` and is true only inside draft mode. It
  * relaxes the visibility and scheduling gates so the Presentation tool can show
  * unpublished and future-dated documents without a second set of queries.
  */
@@ -63,7 +63,6 @@ export const siteSettingsQuery = defineQuery(`
     description,
     email,
     location,
-    "resumeUrl": coalesce(resumeFile.asset->url, resumeUrl),
     socialLinks[]{ _key, label, url, icon },
     ogImage { ${imageFields} }
   }

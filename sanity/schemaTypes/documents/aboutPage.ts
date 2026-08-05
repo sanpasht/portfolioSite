@@ -32,7 +32,7 @@ export const aboutPage = defineType({
       title: "Body",
       type: "richText",
       description:
-        "Written as a narrative, not a resume. Headings become navigable sections.",
+        "Written as a narrative, not a list of jobs. Headings become navigable sections.",
       validation: (Rule) => Rule.required(),
     }),
     defineField({ name: "seo", title: "SEO", type: "seo" }),

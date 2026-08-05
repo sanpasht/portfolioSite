@@ -7,7 +7,7 @@ import { isSanityConfigured } from "@/sanity/env";
  * One-click jump from a page to the document behind it.
  *
  * Only rendered in draft mode, which can only be entered through the Studio's
- * Presentation tool — so it never appears for a signed-out visitor.
+ * Presentation tool, so it never appears for a signed-out visitor.
  */
 export async function EditButton({
   id,

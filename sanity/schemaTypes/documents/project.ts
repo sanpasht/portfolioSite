@@ -182,7 +182,7 @@ export const project = defineType({
       by: [{ field: "date", direction: "desc" }],
     },
     {
-      title: "Title, A–Z",
+      title: "Title, A to Z",
       name: "titleAsc",
       by: [{ field: "title", direction: "asc" }],
     },

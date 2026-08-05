@@ -14,7 +14,7 @@ import { cn, formatDate } from "@/lib/utils";
  * Client-side filtering over the full index.
  *
  * The post list is small enough to ship whole, which keeps search instant and
- * means the page still works with JavaScript disabled — the unfiltered list is
+ * means the page still works with JavaScript disabled. The unfiltered list is
  * what renders on the server.
  */
 export function PostSearch({ posts }: { posts: PostSummary[] }) {

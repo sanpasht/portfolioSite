@@ -30,8 +30,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(siteUrl),
     title: {
-      default: `${settings.name} — ${settings.role}`,
-      template: `%s — ${settings.name}`,
+      default: `${settings.name} · ${settings.role}`,
+      template: `%s · ${settings.name}`,
     },
     description: settings.description,
     authors: [{ name: settings.name }],
@@ -41,12 +41,12 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "en_US",
       url: siteUrl,
       siteName: settings.name,
-      title: `${settings.name} — ${settings.role}`,
+      title: `${settings.name} · ${settings.role}`,
       description: settings.description,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${settings.name} — ${settings.role}`,
+      title: `${settings.name} · ${settings.role}`,
       description: settings.description,
     },
     alternates: {

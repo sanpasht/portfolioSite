@@ -36,7 +36,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   seo,
 ];
 
-/** Documents that exist exactly once — surfaced as single items in the Studio. */
+/** Documents that exist exactly once, surfaced as single items in the Studio. */
 export const singletonTypes = [
   "siteSettings",
   "homePage",

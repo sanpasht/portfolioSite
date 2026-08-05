@@ -4,7 +4,7 @@ import { parseBody } from "next-sanity/webhook";
 
 /**
  * Sanity webhook target. Publishing in the Studio revalidates the cached pages
- * within seconds — no redeploy, no code change.
+ * within seconds. No redeploy, no code change.
  *
  * Set up once at sanity.io/manage -> API -> Webhooks:
  *   URL:     https://<your-domain>/api/revalidate

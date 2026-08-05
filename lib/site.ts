@@ -1,9 +1,9 @@
 /**
  * Structural constants only.
  *
- * Anything a reader sees as *content* — bio, links, hero copy — lives in Sanity.
- * This file holds the things that would require a code change anyway: routes,
- * and the fallbacks used when the CMS has nothing to say yet.
+ * Anything a reader sees as *content* (bio, links, hero copy) lives in Sanity,
+ * with seed values in `lib/fallback.ts`. This file holds the two things that
+ * would need a code change regardless: the site URL and the nav routes.
  */
 
 export const siteUrl = (
@@ -16,14 +16,5 @@ export const navigation = [
   { href: "/writing", label: "Writing" },
   { href: "/about", label: "About" },
   { href: "/now", label: "Now" },
-  { href: "/resume", label: "Resume" },
   { href: "/contact", label: "Contact" },
 ] as const;
-
-export const defaultMeta = {
-  name: "Sanaullah Pashtoon",
-  role: "Software Engineer",
-  tagline: "MCS @ UC Irvine · BS Mathematics",
-  description:
-    "Software engineer working close to the metal — embedded systems, real-time audio, and developer tools.",
-} as const;

@@ -1,11 +1,11 @@
-# sanaullahpashtoon.com
+# San Pashtoon
 
 Personal site: writing, projects, and the pages around them. Built to be edited
-entirely through Sanity — publishing a post or reordering featured projects
+entirely through Sanity, so publishing a post or reordering featured projects
 never requires a code change or a redeploy.
 
-**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui ·
-Motion · Sanity · Vercel
+**Stack:** Next.js (App Router), TypeScript, Tailwind CSS v4, shadcn/ui, Motion,
+Sanity, Vercel
 
 ---
 
@@ -39,7 +39,7 @@ is browsable on a fresh clone.
 
    | Variable | Needed for | Where it comes from |
    | --- | --- | --- |
-   | `SANITY_API_READ_TOKEN` | Draft mode and live preview | sanity.io/manage → API → Tokens → **Viewer** |
+   | `SANITY_API_READ_TOKEN` | Draft mode and live preview | sanity.io/manage, API, Tokens, **Viewer** |
    | `SANITY_REVALIDATE_SECRET` | Instant updates on publish | Any random string you choose |
    | `NEXT_PUBLIC_SITE_URL` | Canonicals, sitemap, RSS, OG images | Your domain, no trailing slash |
 
@@ -55,55 +55,60 @@ connected dataset renders as empty, rather than quietly showing seed data.
 
 ### Publish-time revalidation
 
-At sanity.io/manage → API → Webhooks, add:
+At sanity.io/manage, under API, Webhooks, add:
 
-- **URL** — `https://<your-domain>/api/revalidate`
-- **Dataset** — production
-- **Trigger on** — create, update, delete
-- **Secret** — the same value as `SANITY_REVALIDATE_SECRET`
+- **URL:** `https://<your-domain>/api/revalidate`
+- **Dataset:** production
+- **Trigger on:** create, update, delete
+- **Secret:** the same value as `SANITY_REVALIDATE_SECRET`
 
 Publishing then refreshes the affected pages within seconds. Without it, pages
 still refresh on their own hourly revalidation.
 
 ---
 
-## Deploying
+## Editing and publishing
 
-Import the repo on Vercel and add the same environment variables under Settings
-→ Environment Variables. `NEXT_PUBLIC_SITE_URL` should be the production
-domain. Nothing else needs configuring; the Studio deploys with the site at
-`/studio`.
+You edit at `/studio`. There is no separate admin login for the site itself:
+authorization is your Sanity account, and only the people you invite to the
+Sanity project can sign in.
 
----
+**To publish:** open a document, fill it in, set *Visibility* to Published, and
+press **Publish**. Required fields block publishing until they're filled.
 
-## How editing works
+**To see changes before they're live:** open **Presentation** from the top of
+the Studio. The site loads beside the editor, showing unpublished content, with
+click-to-edit overlays. A small **Edit** button also appears on each page while
+you're in that mode, jumping straight to the document behind it. Both disappear
+for signed-out visitors, because that mode can only be entered through an
+authenticated Studio session.
 
-Everything a reader sees is a CMS field. The Studio is organised as:
+**To add another editor:** sanity.io/manage, your project, Members, Invite.
+Editor role is enough to write and publish.
 
-- **Homepage / About / Now / Contact** — the one-off pages, edited in place.
-- **Writing** and **Projects** — split into Published / Drafts / Archived.
-- **Site settings** — name, role, description, email, resume, and the links
-  used in the footer and on /contact.
+The Studio is organised as:
+
+- **Homepage / About / Now / Contact:** the one-off pages, edited in place.
+- **Writing** and **Projects:** split into Published, Drafts, and Archived.
+- **Site settings:** name, role, description, email, and the links used in the
+  footer and on /contact.
 
 Specific behaviours worth knowing:
 
 | Thing | How it works |
 | --- | --- |
 | **Scheduling** | Set a future *Publish date* on a post. It stays hidden until that moment, then appears on its own. |
-| **Draft / Published / Archived** | The *Visibility* field. Only "Published" is public; "Archived" keeps the document but removes it from the site. |
-| **Featured project order** | Drag the references in Homepage → *Featured projects*. If that list is empty, the homepage falls back to every project flagged `featured`, newest first. |
-| **Live preview** | Studio → Presentation. The site renders beside the editor with click-to-edit overlays and unpublished content visible. |
-| **Edit button** | A small "Edit" link appears on each page while in draft mode, jumping straight to that document. It's invisible to signed-out visitors, since draft mode can only be entered through an authenticated Studio session. |
+| **Draft / Published / Archived** | The *Visibility* field. Only "Published" is public. "Archived" keeps the document but removes it from the site. |
+| **Featured project order** | Drag the references in Homepage, *Featured projects*. If that list is empty, the homepage falls back to every project flagged `featured`, newest first. |
 | **Reading time** | Computed from the body. Nothing to set. |
 | **Table of contents** | Generated from H2/H3 headings on posts and About, shown when there are at least two. |
-| **Resume** | `/resume` redirects to the file uploaded in Site settings, or to the URL set there. |
-| **Autosave, version history, rollback, duplicate, drag-and-drop uploads** | Native Sanity behaviour — no configuration needed. Document history is under the ⋯ menu on any document. |
+| **Autosave, version history, rollback, duplicate, drag-and-drop uploads** | Native Sanity behaviour, no configuration needed. Document history is under the three-dot menu on any document. |
 | **Validation** | Required fields block publishing and are listed in the Studio's validation panel. |
 
 One thing from the original spec that isn't here: the Portable Text editor has
-no slash-command menu — Sanity doesn't provide one, and bolting on a
-third-party editor would trade a decade of stability for a shortcut. Formatting
-is on the toolbar and the usual keyboard shortcuts.
+no slash-command menu. Sanity doesn't provide one, and bolting on a third-party
+editor would trade a decade of stability for a shortcut. Formatting is on the
+toolbar and the usual keyboard shortcuts.
 
 ### Writing technical posts
 
@@ -112,6 +117,14 @@ filename, LaTeX (both a display *Math* block and an inline-math annotation),
 tables, images with required alt text, and footnotes. Code and math are
 rendered on the server, so the browser downloads no highlighting or typesetting
 library.
+
+---
+
+## Deploying
+
+Import the repo on Vercel and add the same environment variables under Settings,
+Environment Variables. `NEXT_PUBLIC_SITE_URL` should be the production domain.
+Nothing else needs configuring; the Studio deploys with the site at `/studio`.
 
 ---
 
