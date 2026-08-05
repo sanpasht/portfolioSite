@@ -53,6 +53,41 @@ Once a document exists in Sanity it overrides the seed content for that page.
 Collections behave slightly differently on purpose: an empty Projects list in a
 connected dataset renders as empty, rather than quietly showing seed data.
 
+### Importing the seed content (optional, one time)
+
+The pages render seed text from `lib/fallback.ts` before Sanity has anything in
+it. That text lives in the codebase, not the dataset, so opening the Studio
+gives you a blank editor rather than something to revise.
+
+If you'd rather edit than retype, import it once:
+
+```bash
+npm run seed -- --dry-run
+```
+
+That lists what it would create and writes nothing. When the list looks right,
+drop the flag:
+
+```bash
+npm run seed
+```
+
+It needs a token with **Editor** rights in `.env.local` as
+`SANITY_API_WRITE_TOKEN`, which is a different token from the read-only one
+used for previews. Delete it afterwards if you like; the site never reads it.
+
+Everything arrives as a **draft**, so nothing reaches the site until you press
+Publish. Projects and posts also arrive with Visibility set to Draft, because
+their seed descriptions are placeholders.
+
+Two things the script will not do:
+
+- It only ever writes to `drafts.*` ids, so a published document cannot be
+  overwritten by it under any circumstances, `--force` included.
+- It skips anything that already exists. Re-running it after you've started
+  editing changes nothing. Pass `--force` to replace existing *drafts*, which
+  does discard edits in those drafts.
+
 ### Publish-time revalidation
 
 At sanity.io/manage, under API, Webhooks, add:
@@ -152,4 +187,5 @@ npm run dev        # dev server
 npm run build      # production build
 npm run typecheck  # tsc --noEmit
 npm run lint       # eslint
+npm run seed       # one-time import of seed content into Sanity as drafts
 ```
