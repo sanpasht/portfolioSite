@@ -221,7 +221,24 @@ async function main() {
   }
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
+  const status =
+    typeof error === "object" && error !== null && "statusCode" in error
+      ? (error as { statusCode?: number }).statusCode
+      : undefined;
+
+  if (status === 401 || status === 403) {
+    console.error(
+      "\nSeed failed: the token was rejected for writing.\n\n" +
+        "The read token used for previews has Viewer rights, which cannot\n" +
+        "create documents. Create a second token with Editor rights at\n" +
+        "https://sanity.io/manage -> API -> Tokens, then add it to .env.local:\n\n" +
+        "  SANITY_API_WRITE_TOKEN=...\n\n" +
+        "Nothing was written.\n",
+    );
+    process.exit(1);
+  }
+
   console.error("\nSeed failed:", error instanceof Error ? error.message : error);
   process.exit(1);
 });
